@@ -1,0 +1,53 @@
+
+resnet_18: &resnet_default
+  optimizer:
+    type: AdamW
+    lr: 0.001  
+    weight_decay: 0.06
+    betas: [0.9, 0.999]
+    eps: 1e-8
+  scheduler:
+    type: CosineAnnealingLR
+    T_max: 100
+    eta_min: 2e-6  
+
+resnet_34:
+  <<: *resnet_default
+
+resnet_50:
+  optimizer:
+    type: AdamW
+    lr: 0.0002  
+    weight_decay: 0.02  
+    betas: [0.9, 0.999]
+    eps: 1e-8
+  scheduler:
+    type: CosineAnnealingLR
+    T_max: 100  
+    eta_min: 1e-6
+    warmup_epochs: 2  
+    warmup_lr_init: 1e-6
+
+resnet_101:
+  optimizer:
+    type: AdamW
+    lr: 0.0005  
+    weight_decay: 0.1
+    betas: [0.9, 0.999]
+    eps: 1e-8
+  scheduler:
+    type: CosineAnnealingLR
+    T_max: 100
+    eta_min: 0.0
+
+resnet_152:
+  optimizer:
+    type: AdamW
+    lr: 0.0005
+    weight_decay: 0.1
+    betas: [0.9, 0.999]
+    eps: 1e-8
+  scheduler:
+    type: CosineAnnealingLR
+    T_max: 100
+    eta_min: 0.0

@@ -1,0 +1,17 @@
+
+training:
+  batch_size: 64
+  epochs: 100
+  num_workers: 4
+
+# default optimizer configuration
+optimizer:
+  type: AdamW
+  lr: 5e-4
+  weight_decay: 0.01
+
+# default learning rate scheduler configuration
+scheduler:
+  type: CosineAnnealingLR
+  T_max: 100
+  eta_min: 1e-6

@@ -1,0 +1,77 @@
+
+efficientnet_b0: &efficientnet_default
+  optimizer:
+    type: RMSprop
+    lr: 0.0002
+    momentum: 0.9
+    weight_decay: 2e-5
+    eps: 0.001
+  scheduler:
+    type: CosineAnnealingLR
+    T_max: 100
+    eta_min: 1e-5
+    warmup_epochs: 5
+    warmup_start_lr: 1e-4
+
+efficientnet_b1:
+  <<: *efficientnet_default
+  optimizer:
+    type: RMSprop
+    lr: 0.0004
+    momentum: 0.9
+    weight_decay: 1e-4
+    eps: 0.001
+
+efficientnet_b2:
+  <<: *efficientnet_default
+  optimizer:
+    type: RMSprop
+    lr: 0.0003
+    momentum: 0.9
+    weight_decay: 1e-4
+    eps: 0.001
+
+efficientnet_b3:
+  <<: *efficientnet_default
+  optimizer:
+    type: RMSprop
+    lr: 0.0002
+    momentum: 0.9
+    weight_decay: 1e-4
+    eps: 0.001
+
+efficientnet_b4:
+  <<: *efficientnet_default
+  optimizer:
+    type: RMSprop
+    lr: 0.00015
+    momentum: 0.9
+    weight_decay: 1e-4
+    eps: 0.001
+
+efficientnet_b5:
+  <<: *efficientnet_default
+  optimizer:
+    type: RMSprop
+    lr: 0.0001
+    momentum: 0.9
+    weight_decay: 1e-4
+    eps: 0.001
+
+efficientnet_b6:
+  <<: *efficientnet_default
+  optimizer:
+    type: RMSprop
+    lr: 0.00008
+    momentum: 0.9
+    weight_decay: 1e-4
+    eps: 0.001
+
+efficientnet_b7:
+  <<: *efficientnet_default
+  optimizer:
+    type: RMSprop
+    lr: 0.00005
+    momentum: 0.9
+    weight_decay: 1e-4
+    eps: 0.001 

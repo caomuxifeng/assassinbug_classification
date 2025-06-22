@@ -1,0 +1,56 @@
+
+densenet_121: &densenet_default
+  optimizer:
+    type: AdamW
+    lr: 0.0015  
+    weight_decay: 0.06  
+    betas: [0.9, 0.999]
+    eps: 1e-8
+  scheduler:
+    type: CosineAnnealingLR
+    T_max: 100
+    eta_min: 0.0002  
+    warmup_epochs: 2  
+    warmup_start_lr: 0.0004
+
+densenet_169:
+  <<: *densenet_default
+  optimizer:
+    type: AdamW
+    lr: 0.0016  
+    weight_decay: 0.05
+    betas: [0.9, 0.999]
+  scheduler:
+    type: CosineAnnealingLR  
+    T_max: 100
+    eta_min: 0.00016
+    warmup_epochs: 2
+    warmup_start_lr: 0.00032
+
+densenet_201:
+  <<: *densenet_default
+  optimizer:
+    type: AdamW
+    lr: 0.0006  
+    weight_decay: 0.03  
+    betas: [0.9, 0.999]
+  scheduler:
+    type: CosineAnnealingLR
+    T_max: 100
+    eta_min: 0.00006  
+    warmup_epochs: 4  
+    warmup_start_lr: 0.00012  
+
+densenet_161:
+  <<: *densenet_default
+  optimizer:
+    type: AdamW
+    lr: 0.0004  
+    weight_decay: 0.02  
+    betas: [0.9, 0.999]
+  scheduler:
+    type: CosineAnnealingLR
+    T_max: 100
+    eta_min: 0.00004  
+    warmup_epochs: 5  
+    warmup_start_lr: 0.00008  
