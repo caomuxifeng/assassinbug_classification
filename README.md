@@ -35,8 +35,8 @@ This project implements a comprehensive deep learning framework for hierarchical
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/caomuxifeng/insect-classification.git
-cd insect-classification
+git clone https://github.com/caomuxifeng/assassinbug_classification.git
+cd assassinbug_classification
 ```
 
 2. **Create virtual environment**
