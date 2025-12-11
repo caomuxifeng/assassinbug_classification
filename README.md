@@ -35,7 +35,7 @@ This project implements a comprehensive deep learning framework for hierarchical
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/your-username/insect-classification.git
+git clone https://github.com/caomuxifeng/insect-classification.git
 cd insect-classification
 ```
 
