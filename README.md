@@ -5,6 +5,11 @@
 
 This project implements a comprehensive deep learning framework for hierarchical classification of assassin bugs (Reduviidae family) using state-of-the-art computer vision models. The system performs multi-level taxonomic classification across three hierarchical levels: **subfamily**, **genus**, and **species**.
 
+## 📦 Included Assets (ready to use)
+- Sample images for inference and demos: `example/Ectrychotes andreae_*.jpg|.JPG|.png`
+- A pretrained checkpoint for quick testing: `example/DenseNet_121_epoch_84_94.04.pth`
+- Dependency lock file for reproducible setup: `requirements.txt`
+
 ### Key Features
 
 - **Multi-Model Support**: Implementation of 7 popular deep learning architectures
@@ -49,6 +54,8 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+
+> If you only want to run the provided demo, installing from `requirements.txt` is the quickest way to match the tested environment.
 
 ## 📁 Dataset Structure
 
@@ -123,6 +130,18 @@ python inference.py \
     --taxonomy_file ./data/taxonomy.csv
 ```
 
+### Quick Demo with Provided Assets
+Use the bundled checkpoint and sample image to verify the pipeline end-to-end:
+```bash
+python inference.py \
+    --model_path ./example/DenseNet_121_epoch_84_94.04.pth \
+    --model_type densenet \
+    --model_name densenet_121 \
+    --image_path ./example/Ectrychotes\ andreae_001.jpg \
+    --taxonomy_file ./data/taxonomy.csv
+```
+The command will output predicted subfamily, genus, and species for the sample image. Swap `image_path` to any other file in `example/` to test additional samples.
+
 ## 📊 Model Performance
 
 ### Evaluation Metrics
@@ -155,6 +174,7 @@ results/
 
 ## 🔄 Updates
 
+- **v1.1.0** (2025-12-11): Added bundled demo assets (`example/` images + DenseNet checkpoint), pinned `requirements.txt`, and documented quick-start inference command.
 - **v1.0.0** (2025-06): Initial release with 7 model architectures
 ---
 
