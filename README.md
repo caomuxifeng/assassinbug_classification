@@ -197,7 +197,7 @@ results/
 
 ## 🔄 Updates
 
-- **v1.2.0** (2025-12): Added Docker-based setup (`kkybp/pytorch-2-0-0:22.04`), documented quick-start inference with bundled demo assets (`example/` images + DenseNet checkpoint), pinned `requirements.txt`, and clarified full datasets/all trained models are hosted on Figshare with GitHub carrying only the lightweight checkpoint.
+- **v1.1.0** (2025-12): Added Docker-based setup (`kkybp/pytorch-2-0-0:22.04`), documented quick-start inference with bundled demo assets (`example/` images + DenseNet checkpoint), pinned `requirements.txt`, and clarified full datasets/all trained models are hosted on Figshare with GitHub carrying only the lightweight checkpoint.
 - **v1.0.0** (2025-06): Initial release with 7 model architectures
 ---
 
