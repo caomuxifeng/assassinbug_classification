@@ -9,6 +9,7 @@ This project implements a comprehensive deep learning framework for hierarchical
 - Sample images for inference and demos: `example/Ectrychotes andreae_*.jpg|.JPG|.png`
 - A pretrained checkpoint for quick testing: `example/DenseNet_121_epoch_84_94.04.pth`
 - Dependency lock file for reproducible setup: `requirements.txt`
+- Full dataset and all trained model files: downloadable from Figshare at https://figshare.com/s/b6729a5f514b7e8cc71b
 
 ### Key Features
 
@@ -56,6 +57,24 @@ pip install -r requirements.txt
 ```
 
 > If you only want to run the provided demo, installing from `requirements.txt` is the quickest way to match the tested environment.
+
+### 🐳 Docker-based environment (recommended to avoid setup errors)
+Use the published Docker image to get CUDA/toolchain prerequisites, then install Python packages inside the container:
+```bash
+# 1) Pull the prebuilt image from Docker Hub
+docker pull kkybp/pytorch-2-0-0:22.04
+
+# 2) Launch a container with the project mounted; add --gpus all if you have NVIDIA GPUs
+docker run --rm -it --gpus all \
+  -v $(pwd):/workspace \
+  -w /workspace \
+  kkybp/pytorch-2-0-0:22.04 \
+  bash
+
+# 3) Inside the container, install Python dependencies
+pip install -r requirements.txt
+```
+If you prefer CPU-only, drop `--gpus all`. Update the image name/tag if you host it under a different namespace.
 
 ## 📁 Dataset Structure
 
@@ -142,6 +161,10 @@ python inference.py \
 ```
 The command will output predicted subfamily, genus, and species for the sample image. Swap `image_path` to any other file in `example/` to test additional samples.
 
+### External data & models (Figshare)
+- Due to GitHub file size limits, only the lightweight `densenet_121` checkpoint is bundled here.
+- The complete dataset and all trained model files can be downloaded from Figshare: https://figshare.com/s/b6729a5f514b7e8cc71b
+
 ## 📊 Model Performance
 
 ### Evaluation Metrics
@@ -174,7 +197,7 @@ results/
 
 ## 🔄 Updates
 
-- **v1.1.0** (2025-12-11): Added bundled demo assets (`example/` images + DenseNet checkpoint), pinned `requirements.txt`, and documented quick-start inference command.
+- **v1.2.0** (2025-12): Added Docker-based setup (`kkybp/pytorch-2-0-0:22.04`), documented quick-start inference with bundled demo assets (`example/` images + DenseNet checkpoint), pinned `requirements.txt`, and clarified full datasets/all trained models are hosted on Figshare with GitHub carrying only the lightweight checkpoint.
 - **v1.0.0** (2025-06): Initial release with 7 model architectures
 ---
 
